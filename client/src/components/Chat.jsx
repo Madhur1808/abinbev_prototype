@@ -64,12 +64,8 @@ const Chat = () => {
   }
 
   const responseHandler = async (userInput) => {
-    if (!(p_test && a_test))
-      alert(
-        "You must give personality an aptitude test before accessing Chatup"
-      );
-    else {
-      const auth_token = "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";
+    if (p_test && a_test) {
+      const auth_token = "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";
       const url =
         "https://api-inference.huggingface.co/models/codellama/CodeLlama-34b-Instruct-hf";
 
@@ -105,6 +101,10 @@ const Chat = () => {
       } catch (error) {
         console.error("Error:", error);
       }
+    } else {
+      alert(
+        "You must give both personality and aptitude test before accessing ChatUp"
+      );
     }
   };
 
@@ -134,11 +134,6 @@ const Chat = () => {
               {value1}
             </Typography>
             <br />
-            {/* {careerSuggestionsLines.map((line, index) => (
-              <Typography variant="h6" sx={{ margin: "2px 0 0 10px" }}>
-                {line}
-              </Typography>
-            ))} */}
 
             <Typography variant="h6" sx={{ margin: "2px 0 0 10px" }}>
               {value3}

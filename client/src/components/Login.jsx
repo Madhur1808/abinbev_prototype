@@ -39,7 +39,7 @@ function Login() {
         console.log(response);
         alert(response.data.message);
         localStorage.setItem("token", response.data.token);
-        navigate("/");
+        navigate("/landing");
       }
     } catch (error) {
       console.log(error);

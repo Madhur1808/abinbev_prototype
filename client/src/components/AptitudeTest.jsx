@@ -64,7 +64,7 @@ const AptitudeTest = () => {
     }
 
     const res = await axios.post(
-      "https://sih-r2-backend.onrender.com/userdata",
+      "https://sih-r2.onrender.com/userdata",
       {
         email: localStorage.getItem("email"),
         technical: technical,

@@ -28,7 +28,7 @@ const PersonalityTest = () => {
     }
 
     const res = await axios.post(
-      "https://sih-r2-backend.onrender.com/userdata2",
+      "https://sih-r2.onrender.com/userdata2",
       {
         email: localStorage.getItem("email"),
       }

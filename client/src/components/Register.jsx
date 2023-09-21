@@ -36,7 +36,7 @@ function Register() {
         alert("Password must have atleast 8 characters");
       else {
         const response = await axios.post(
-          "https://sih-r2-backend.onrender.com/signup",
+          "https://sih-r2.onrender.com/signup",
           {
             username: UserName,
             email,

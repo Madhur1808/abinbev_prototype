@@ -31,12 +31,12 @@ const Dashboard = () => {
   const [a_test, setATest] = useState(false);
 
   useEffect(() => {
-    const url = "https://sih-r2-backend.onrender.com/dashboard";
+    const url = "https://sih-r2.onrender.com/dashboard";
     const dashboardHandler = async () => {
       try {
         const response = await axios.get(url);
 
-        console.log(response.data);
+        console.log("this is response data", response.data);
 
         const response_Array = response.data;
         const user_email = localStorage.getItem("email");

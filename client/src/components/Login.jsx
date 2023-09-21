@@ -26,7 +26,7 @@ function Login() {
         alert("Please enter a valid email address");
       else {
         const response = await axios.post(
-          "https://sih-r2-backend.onrender.com/login",
+          "https://sih-r2.onrender.com/login",
           null,
           {
             headers: {

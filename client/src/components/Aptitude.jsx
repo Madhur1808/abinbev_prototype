@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const Aptitude = () => {
   const navigate = useNavigate();
+
   return (
     <>
       <Box

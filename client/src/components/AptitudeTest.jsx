@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useEffect, useState } from "react";
 import {
   Box,
   FormControl,
@@ -17,7 +17,11 @@ import { useNavigate } from "react-router-dom";
 
 const AptitudeTest = () => {
   const navigate = useNavigate();
-  const [value, setValue] = React.useState(new Array(9).fill("-1"));
+  const [value, setValue] = useState(new Array(9).fill("-1"));
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const ans = [
     "Stack",
@@ -63,15 +67,12 @@ const AptitudeTest = () => {
       }
     }
 
-    const res = await axios.post(
-      "https://sih-r2.onrender.com/userdata",
-      {
-        email: localStorage.getItem("email"),
-        technical: technical,
-        cognitive: congnitive,
-        numerical: numerical,
-      }
-    );
+    const res = await axios.post("https://sih-r2.onrender.com/userdata", {
+      email: localStorage.getItem("email"),
+      technical: technical,
+      cognitive: congnitive,
+      numerical: numerical,
+    });
 
     alert("Successfully Submitted!!,You can check your results in Dashboard");
 

@@ -27,7 +27,7 @@ const Home = () => {
             localStorage.setItem("email", response.data.email);
             setEmail(response.data.email);
             // console.log(email);
-            navigate("/");
+            navigate("/landing");
           }
         } catch (error) {
           console.error("Error fetching user data:", error);

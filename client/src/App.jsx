@@ -4,6 +4,7 @@ import Faq from "./components/Faq";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import SalesRepresentative from "./components/SalesRepresentative";
 
 import Blog from "./components/Blog";
 import Explore from "./components/Explore";
@@ -23,6 +24,11 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route
+            path="/salesrepresentative"
+            element={<SalesRepresentative />}
+          />
+
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Register />} />
           <Route path="/landing" element={<Landing />} />

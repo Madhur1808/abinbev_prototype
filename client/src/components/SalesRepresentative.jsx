@@ -3,7 +3,7 @@ import { Box, Typography, Link, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const Home = () => {
+const SalesRepresentative = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
 
@@ -44,10 +44,6 @@ const Home = () => {
     navigate("/signup");
   };
 
-  const salesHandler = () => {
-    navigate("/salesrepresentative");
-  };
-
   return (
     <>
       <Box
@@ -86,7 +82,7 @@ const Home = () => {
           >
             <Button
               variant="text"
-              onClick={salesHandler}
+              onClick={loginHandler}
               sx={{
                 ":hover": {
                   color: "white",
@@ -102,7 +98,7 @@ const Home = () => {
                 marginLeft: "150px",
               }}
             >
-              For Sales Representative
+              For our Customers
             </Button>
             <Typography variant="h3" sx={{ marginBottom: "3px" }}>
               Pioneering Tomorrow's Technology Today, with NexGenChip.
@@ -138,12 +134,13 @@ const Home = () => {
                   color: "white",
                   paddingX: "15px",
                   fontSize: "1.1rem",
+                  marginLeft: "60px",
                 }}
               >
-                LOGIN
+                LOGIN as SALES
               </Button>
 
-              <Button
+              {/* <Button
                 variant="text"
                 onClick={signupHandler}
                 sx={{
@@ -159,7 +156,7 @@ const Home = () => {
                 }}
               >
                 SIGNUP
-              </Button>
+              </Button> */}
             </Box>
           </Box>
         </Box>
@@ -168,4 +165,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default SalesRepresentative;

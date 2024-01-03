@@ -65,7 +65,7 @@ const Home = () => {
         >
           <Box sx={{ width: "60%", height: "100vh" }}>
             <img
-              src="\assets\SIH_dataset.svg"
+              src="\assets\NexGenChip Technologies.png"
               style={{ width: "100%", height: "100vh" }}
             />
           </Box>
@@ -80,13 +80,35 @@ const Home = () => {
               backgroundColor: "white",
             }}
           >
+            <Button
+              variant="text"
+              onClick={loginHandler}
+              sx={{
+                ":hover": {
+                  color: "white",
+                  backgroundColor: "#de6c0e",
+                },
+                display: "block",
+                backgroundColor: "#de6c0e",
+                color: "white",
+                paddingX: "15px",
+                fontSize: "1.1rem",
+                marginBottom: "50px",
+                width: "20vw",
+                marginLeft: "150px",
+              }}
+            >
+              For Sales Representative
+            </Button>
             <Typography variant="h3" sx={{ marginBottom: "3px" }}>
-              Getting Started
+              Pioneering Tomorrow's Technology Today, with NexGenChip.
             </Typography>
             <Typography variant="h6">
-              Here, you will find everything essential for accessing top-tier
-              career guidance, ensuring that your professional path is
-              illuminated with clarity and precision.
+              At NexGenChip's customer management site, experience seamless
+              interaction and personalized support. Access real-time updates,
+              technical resources, and collaborative tools, ensuring a proactive
+              and tailored approach to meet your semiconductor needs
+              efficiently.
             </Typography>
 
             <Box
@@ -105,10 +127,10 @@ const Home = () => {
                 sx={{
                   ":hover": {
                     color: "white",
-                    backgroundColor: "rgb(124, 60, 240)",
+                    backgroundColor: "#de6c0e",
                   },
                   display: "block",
-                  backgroundColor: "rgb(140, 86, 248)",
+                  backgroundColor: "#de6c0e",
                   color: "white",
                   paddingX: "15px",
                   fontSize: "1.1rem",
@@ -123,10 +145,10 @@ const Home = () => {
                 sx={{
                   ":hover": {
                     color: "white",
-                    backgroundColor: "rgb(124, 60, 240)",
+                    backgroundColor: "#de6c0e",
                   },
                   display: "block",
-                  backgroundColor: "rgb(140, 86, 248)",
+                  backgroundColor: "#de6c0e",
                   color: "white",
                   paddingX: "15px",
                   fontSize: "1.1rem",

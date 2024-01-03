@@ -59,7 +59,7 @@ function Login() {
       <AppBar
         sx={{
           background: "transparent",
-          color: "rgb(140, 86, 248)",
+          color: "#de6c0e",
           display: "flex",
           width: "100vw",
           height: "60px",
@@ -79,7 +79,7 @@ function Login() {
             color: "inherit",
           }}
         >
-          LangMODLabs
+          NexGenChips
         </Typography>
 
         <Button
@@ -89,13 +89,13 @@ function Login() {
           }}
           sx={{
             ":hover": {
-              backgroundColor: "rgb(140, 86, 248)",
+              backgroundColor: "#de6c0e",
               color: "white",
             },
             height: "70%",
             marginX: "10px",
             marginY: "auto",
-            color: "rgb(140, 86, 248)",
+            color: "#de6c0e",
             display: "block",
           }}
         >
@@ -116,7 +116,7 @@ function Login() {
         <Typography
           sx={{
             fontWeight: "bold",
-            color: "rgb(140, 86, 248)",
+            color: "#de6c0e",
             fontSize: "1.2rem",
           }}
         >
@@ -146,11 +146,11 @@ function Login() {
           sx={{
             ":hover": {
               color: "white",
-              backgroundColor: "rgb(124, 60, 240)",
+              backgroundColor: "#de6c0e",
             },
             my: 2,
             display: "block",
-            backgroundColor: "rgb(140, 86, 248)",
+            backgroundColor: "#de6c0e",
             color: "white",
             paddingX: "15px",
           }}

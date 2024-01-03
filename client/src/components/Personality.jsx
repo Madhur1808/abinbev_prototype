@@ -17,15 +17,12 @@ const Personality = () => {
           alignItems: "center",
           height: "88vh",
           justifyContent: "space-between",
-          //   backgroundColor: "blue",
         }}
       >
-        {/* <Box sx={{ width: "30vw" }}> */}
         <img src="\assets\personality_test.svg" style={{ width: "38vw" }} />
-        {/* </Box> */}
+
         <Box
           sx={{
-            // backgroundColor: "pink",
             height: "35vh",
             width: "40vw",
             display: "flex",

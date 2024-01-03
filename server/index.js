@@ -3,6 +3,7 @@ const jwt = require("jsonwebtoken");
 const fs = require("fs");
 const cors = require("cors");
 
+//initialising express server
 const app = express();
 
 app.use(cors());

@@ -173,9 +173,9 @@ const Chat = () => {
                 ":hover": {
                   color: "white",
 
-                  backgroundColor: "rgb(140, 86, 248)",
+                  backgroundColor: "#de6c0e",
                 },
-                backgroundColor: "rgb(140, 86, 248)",
+                backgroundColor: "#de6c0e",
               }}
             >
               Send

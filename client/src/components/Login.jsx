@@ -39,6 +39,7 @@ function Login() {
         console.log(response);
         alert(response.data.message);
         localStorage.setItem("token", response.data.token);
+        localStorage.setItem("email", email);
         navigate("/");
       }
     } catch (error) {
@@ -155,7 +156,7 @@ function Login() {
             paddingX: "15px",
           }}
         >
-          Login
+          login
         </Button>
       </Card>
     </Box>

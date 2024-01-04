@@ -17,7 +17,7 @@ import { Menu as MenuIcon } from "@mui/icons-material";
 
 import { useNavigate } from "react-router-dom";
 
-const pages = ["Explore", "ChatUp", "Blog", "FAQ", "Dashboard"];
+const pages = ["ChatUp", "Pay", "Dashboard"];
 
 function ResponsiveAppBar(props) {
   const navigate = useNavigate();
@@ -42,11 +42,11 @@ function ResponsiveAppBar(props) {
     setAnchorElUser(null);
   };
 
-  let mainColor = "rgb(140, 86, 248)";
+  let mainColor = "#de6c0e";
   let bgColor = "white";
   if (props.theme === "dark") {
     mainColor = "white";
-    bgColor = "rgb(140, 86, 248)";
+    bgColor = "#de6c0e";
   }
 
   const logoutHandler = () => {
@@ -78,7 +78,7 @@ function ResponsiveAppBar(props) {
               textDecoration: "none",
             }}
           >
-            LangMODLabs
+            NextGenChip
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>

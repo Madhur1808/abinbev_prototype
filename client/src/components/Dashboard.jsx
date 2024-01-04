@@ -29,72 +29,17 @@ const Dashboard = () => {
   const [newObj, setNewObj] = useState({});
   const [p_test, setPTest] = useState(false);
   const [a_test, setATest] = useState(false);
+  // const [userEmail, setuserEmail] = useState("");
 
-  useEffect(() => {
-    const url = "https://sih-r2.onrender.com/dashboard";
-    const dashboardHandler = async () => {
-      try {
-        const response = await axios.get(url);
+  const emailId = localStorage.getItem("email");
 
-        console.log("this is response data", response.data);
+  // console.log(newObj);
 
-        const response_Array = response.data;
-        const user_email = localStorage.getItem("email");
-
-        const userIndex = response_Array.findIndex((user) => {
-          return user.email === user_email;
-        });
-
-        if (userIndex != -1) {
-          const obj = response_Array[userIndex];
-          setNewObj(obj);
-          console.log(obj);
-          if (obj.hasOwnProperty("personality")) {
-            setPTest(true);
-          }
-          if (obj.hasOwnProperty("technical")) {
-            setATest(true);
-          }
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    dashboardHandler();
-  }, []);
-
-  let person = "-";
-  let emailID = newObj.email;
-  let tech = "-";
-  let num = "-";
-  let cog = "-";
-
-  console.log(newObj);
-  if (p_test) {
-    person = newObj.personality;
-    console.log(person);
-  }
-  if (a_test) {
-    tech = newObj.technical;
-    num = newObj.numerical;
-    cog = newObj.cognitive;
-  }
-
-  const score = (score_value) => {
-    if (score_value === 3) return "🟢";
-    else if (score_value <= 1) return "🔴";
-    else if (score_value == "-") return "-";
-    else return "🟡";
-  };
-  const apti = [
-    createData("Numerical Aptitude", score(num)),
-    createData("Technical Aptitude", score(tech)),
-    createData("Coginitive Aptitude", score(cog)),
-  ];
+  const apti = ["Purchase1", "Purchase2", "Purchase3"];
 
   const rows = [
-    createData("Email ID", emailID),
-    createData("Personality Test Results", person),
+    createData("Email ID", emailId),
+    createData("Your due date", "-"),
   ];
   return (
     <>
@@ -136,7 +81,7 @@ const Dashboard = () => {
         </TableContainer>
 
         <Box sx={{ width: "100%", marginY: "1rem", textAlign: "center" }}>
-          <Typography variant="h5">Aptitude Test Results</Typography>
+          <Typography variant="h5">Purchase History</Typography>
         </Box>
 
         <TableContainer
@@ -150,15 +95,15 @@ const Dashboard = () => {
           >
             <TableHead></TableHead>
             <TableBody>
-              {apti.map((row) => (
+              {apti.map((index) => (
                 <TableRow
-                  key={row.name}
+                  key={index}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell component="th" scope="row">
-                    {row.name}
+                    {index}
                   </TableCell>
-                  <TableCell align="right">{row.calories}</TableCell>
+                  <TableCell align="right">-</TableCell>
                 </TableRow>
               ))}
             </TableBody>

@@ -38,11 +38,12 @@ const SalesRepresentative = () => {
   }, []);
 
   const loginHandler = () => {
+    setSales(true);
     navigate("/login");
   };
-  const signupHandler = () => {
-    navigate("/signup");
-  };
+  //   const signupHandler = () => {
+  //     navigate("/signup");
+  //   };
 
   return (
     <>

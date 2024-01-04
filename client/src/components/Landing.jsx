@@ -29,49 +29,44 @@ const Landing = () => {
         >
           <Typography variant="h3">About Us</Typography>
           <Typography>
-            Our proprietary personality and aptitude assessment is meticulously
-            crafted, drawing upon the latest research, to empower our advanced
-            language model in providing you with tailored recommendations that
-            truly suit your needs. If you haven't already, we invite you to take
-            our comprehensive personality and aptitude test today. By simply
-            clicking the link below, you can access top-tier career advice from
-            our finely-tuned, large-scale language model, available around the
-            clock, exclusively for your career counseling needs.
+            At NexGenChip Technologies, we pioneer the forefront of
+            semiconductor innovation, driving the future with our cutting-edge
+            chip solutions. Our commitment to technological advancement and
+            precision engineering is unparalleled, crafting chips that redefine
+            possibilities across industries. Powered by relentless innovation,
+            we specialize in developing high-performance semiconductor
+            solutions, delivering efficiency, reliability, and transformative
+            power. Join us on the journey toward a connected, smarter world as
+            we continue to push boundaries and shape the future of semiconductor
+            technology.
           </Typography>
           <Button
             variant="contained"
             onClick={() => {
-              navigate("/Explore");
+              navigate("/pay");
             }}
             sx={{
-              backgroundColor: "rgb(140, 86, 248)",
+              backgroundColor: "#de6c0e",
               ":hover": {
-                backgroundColor: "rgb(140, 86, 248)",
+                backgroundColor: "#de6c0e",
                 color: "white",
               },
               width: "200px",
               margin: "20px 0 20px 0",
             }}
           >
-            Get Started
+            Instant pay
           </Button>
-          <Typography>
-            If you have already completed our comprehensive personality and
-            aptitude assessment, you are now ready to address all your
-            career-related inquiries with ChatUp. ChatUp is a fine-tuned large
-            language model, tailored using a hand-crafted career counselling
-            dataset. To engage with ChatUp, simply follow the link below and
-            access expert guidance for your professional journey.
-          </Typography>
+          <Typography></Typography>
           <Button
             variant="contained"
             onClick={() => {
               navigate("/chatup");
             }}
             sx={{
-              backgroundColor: "rgb(140, 86, 248)",
+              backgroundColor: "#de6c0e",
               ":hover": {
-                backgroundColor: "rgb(140, 86, 248)",
+                backgroundColor: "#de6c0e",
                 color: "white",
               },
               width: "200px",
@@ -83,7 +78,7 @@ const Landing = () => {
         </Box>
         <Box sx={{ width: "40%", display: "flex" }}>
           <img
-            src="\assets\undraw_career_development_re_sv91.svg"
+            src="\assets\survey.svg"
             style={{
               backgroundSize: "cover",
               width: "36vw",

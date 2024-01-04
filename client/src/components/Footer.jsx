@@ -29,7 +29,7 @@ export const Footer = () => {
             color={"inherit"}
             sx={{ textDecoration: "none" }}
           >
-            <Typography variant="h5">LangMODLabs</Typography>
+            <Typography variant="h5">NexGenChips</Typography>
           </Link>
         </Box>
 
@@ -123,7 +123,9 @@ export const Footer = () => {
               <EmailIcon
                 sx={{ color: "white", fontSize: "1.4rem", paddingRight: "5px" }}
               />
-              <Typography sx={{ color: "white" }}>sih@gmail.com</Typography>
+              <Typography sx={{ color: "white" }}>
+                nextgenchips@gmail.com
+              </Typography>
             </Link>
           </Box>
         </Box>

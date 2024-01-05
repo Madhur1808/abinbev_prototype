@@ -16,6 +16,8 @@ import {
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  // const [salesEmail, setsalesEmail] = useState("");
+
   const navigate = useNavigate();
 
   const loginHandler = async () => {
@@ -40,7 +42,8 @@ function Login() {
         alert(response.data.message);
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("email", email);
-        navigate("/");
+        // console.log(salesEmail);
+        email.includes("@sales") ? navigate("/salesDashboard") : navigate("/");
       }
     } catch (error) {
       console.log(error);

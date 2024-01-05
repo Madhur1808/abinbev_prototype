@@ -5,15 +5,16 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import SalesRepresentative from "./components/SalesRepresentative";
 
-import Blog from "./components/Blog";
-import Explore from "./components/Explore";
+// import Blog from "./components/Blog";
+// import Explore from "./components/Explore"
 import Landing from "./components/Landing";
 import Dashboard from "./components/Dashboard";
 import Chat from "./components/Chat";
+import SalesDashboard from "./components/SalesDashboard";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import AptitudeTest from "./components/AptitudeTest";
-import PersonalityTest from "./components/PersonalityTest";
+// import AptitudeTest from "./components/AptitudeTest";
+// import PersonalityTest from "./components/PersonalityTest";
 
 function App() {
   return (
@@ -29,8 +30,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Register />} />
           <Route path="/landing" element={<Landing />} />
-          <Route path="/Explore" element={<Explore />} />
-          <Route path="/blog" element={<Blog />} />
+          {/* <Route path="/Explore" element={<Explore />} /> */}
+          {/* <Route path="/blog" element={<Blog />} /> */}
           <Route path="/Chatup" element={<Chat />} />
           {/* <Route path="/faq" element={<Faq />} /> */}
           {/* <Route path="/Explore/aptitudeTest" element={<AptitudeTest />} />
@@ -39,6 +40,7 @@ function App() {
             element={<PersonalityTest />}
           /> */}
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/SalesDashboard" element={<SalesDashboard />} />
         </Routes>
       </Router>
     </>

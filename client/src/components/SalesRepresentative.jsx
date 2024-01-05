@@ -1,44 +1,48 @@
 import { React, useState, useEffect } from "react";
 import { Box, Typography, Link, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
 
 const SalesRepresentative = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
 
   ///for protected routes
-  useEffect(() => {
-    const fetchme = async () => {
-      const url = "https://sih-r2.onrender.com/me";
-      const token = localStorage.getItem("token");
-      console.log(token);
-      // Check if the token exists before making the request
-      if (token) {
-        try {
-          const response = await axios.get(url, {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          });
+  // useEffect(() => {
+  //   const fetchme = async () => {
+  //     const url = "https://sih-r2.onrender.com/me";
+  //     const token = localStorage.getItem("token");
+  //     console.log(token);
+  //     // Check if the token exists before making the request
+  //     if (token) {
+  //       try {
+  //         const response = await axios.get(url, {
+  //           headers: {
+  //             Authorization: `Bearer ${token}`,
+  //           },
+  //         });
 
-          console.log(response);
-          if (response.data) {
-            localStorage.setItem("email", response.data.email);
-            setEmail(response.data.email);
-            // console.log(email);
-            navigate("/landing");
-          }
-        } catch (error) {
-          console.error("Error fetching user data:", error);
-        }
-      }
-    };
-    fetchme();
-  }, []);
+  //         console.log(response);
+  //         if (response.data) {
+  //           localStorage.setItem("email", response.data.email);
+  //           setEmail(response.data.email);
+  //           // console.log(email);
+  //           navigate("/landing");
+  //         }
+  //       } catch (error) {
+  //         console.error("Error fetching user data:", error);
+  //       }
+  //     }
+  //   };
+  //   fetchme();
+  // }, []);
 
   const loginHandler = () => {
-    setSales(true);
+    // setSales(true);
+    navigate("/");
+  };
+
+  const salesLoginHandler = () => {
     navigate("/login");
   };
   //   const signupHandler = () => {
@@ -124,7 +128,7 @@ const SalesRepresentative = () => {
             >
               <Button
                 variant="text"
-                onClick={loginHandler}
+                onClick={salesLoginHandler}
                 sx={{
                   ":hover": {
                     color: "white",

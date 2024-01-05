@@ -1,5 +1,5 @@
 import React from "react";
-import SalesNavBar from "./SalesNavBar";
+import ResponsiveAppBar from "./SalesNavbar";
 
 const SalesDashboard = () => {
   const imageStyles = {
@@ -16,7 +16,7 @@ const SalesDashboard = () => {
 
   return (
     <>
-      <SalesNavBar />
+      <ResponsiveAppBar />
       <div style={imageStyles}>
         <img
           src={imgSrc}

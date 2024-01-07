@@ -1,6 +1,7 @@
 const express = require("express");
 const jwt = require("jsonwebtoken");
 const fs = require("fs");
+const OpenAI = require("openai");
 const cors = require("cors");
 
 //initialising express server
@@ -44,6 +45,34 @@ const authenticateJwtuser = (req, res, next) => {
     res.sendStatus(401);
   }
 };
+
+// chatapp
+
+const openai = new OpenAI({
+  apiKey: "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",
+});
+
+app.post("/openaichat", async (req, res) => {
+  const msg = req.body.message;
+  try {
+    console.log(msg);
+
+    const completion = await openai.chat.completions.create({
+      messages: [
+        { role: "system", content: "You are a SalesPerson." },
+        { role: "user", content: msg },
+      ],
+      model: "gpt-3.5-turbo",
+    });
+
+    return res
+      .status(200)
+      .json({ message: completion.choices[0].message.content });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: "Internal server error" });
+  }
+});
 
 app.post("/signup", (req, res) => {
   //   console.log(req.body);

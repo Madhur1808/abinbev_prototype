@@ -20,7 +20,7 @@ const SalesDashboard = () => {
       {
         label: "Sales",
         data: [3000, 4000, 6000, 4500, 7000, 6500],
-        borderColor: "rgba(75,192,192,1)",
+        borderColor: "rgba(222,108,14,1)",
         fill: false,
       },
     ],
@@ -61,7 +61,7 @@ const SalesDashboard = () => {
           "rgba(153, 102, 255, 1)",
           "rgba(255, 159, 64, 1)",
         ],
-        borderWidth: 1,
+        borderWidth: 3,
       },
     ],
   };
@@ -118,22 +118,33 @@ const SalesDashboard = () => {
               <canvas ref={lineChartRef} />
             </Box>
           </Grid>
-          <Grid item xs={12} md={6}>
-            <Box p={2}>
-              <Typography variant="h6" gutterBottom>
-                Product Sales Distribution (Pie Chart)
-              </Typography>
-              <canvas ref={pieChartRef} />
-            </Box>
-          </Grid>
-          <Grid item xs={12}>
-            <Box p={2}>
-              <Typography variant="h6" gutterBottom>
-                Sample Bar Chart
-              </Typography>
-              <canvas ref={barChartRef} />
-            </Box>
-          </Grid>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-around",
+              marginLeft: "150px",
+              width: "80%",
+              marginTop: "30px",
+              alignContent: "center",
+            }}
+          >
+            <Grid item xs={12} md={6}>
+              <Box p={2}>
+                <Typography variant="h6" gutterBottom>
+                  Product Sales Distribution (Pie Chart)
+                </Typography>
+                <canvas ref={pieChartRef} />
+              </Box>
+            </Grid>
+            <Grid item xs={12}>
+              <Box p={2}>
+                <Typography variant="h6" gutterBottom>
+                  Sample Bar Chart
+                </Typography>
+                <canvas ref={barChartRef} />
+              </Box>
+            </Grid>
+          </div>
         </Grid>
       </Box>
     </>

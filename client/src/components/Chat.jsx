@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Container, TextField, Button, Typography, Box } from "@mui/material";
 // import { useSpeechSynthesis } from "react-speech-kit";
 import axios from "axios";
-import ResponsiveAppBar from "./Navbar";
+import ResponsiveAppBar from "./NavBar";
 const ChatUp = () => {
   const [message, setMessage] = useState("");
   const [chat, setChat] = useState([]);

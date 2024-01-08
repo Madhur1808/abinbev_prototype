@@ -35,11 +35,14 @@ function Register() {
       else if (password.length < 8)
         alert("Password must have atleast 8 characters");
       else {
-        const response = await axios.post("http://localhost:4000/signup", {
-          username: UserName,
-          email,
-          password,
-        });
+        const response = await axios.post(
+          "https://abinbev-prototype.onrender.com/signup",
+          {
+            username: UserName,
+            email,
+            password,
+          }
+        );
 
         console.log(response);
         alert(response.data.message);

@@ -27,7 +27,7 @@ function Login() {
       else if (email.indexOf("@") == -1)
         alert("Please enter a valid email address");
       else {
-        const response = await axios.post("http://localhost:4000/login", null, {
+        const response = await axios.post("https://abinbev-prototype.onrender.com/login", null, {
           headers: {
             email,
             password,

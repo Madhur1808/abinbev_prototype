@@ -10,7 +10,7 @@ const Home = () => {
   ///for protected routes
   useEffect(() => {
     const fetchme = async () => {
-      const url = "http://localhost:4000/me";
+      const url = "https://abinbev-prototype.onrender.com/me";
       const token = localStorage.getItem("token");
       console.log(token);
       // Check if the token exists before making the request

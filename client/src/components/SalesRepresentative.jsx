@@ -7,36 +7,6 @@ const SalesRepresentative = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
 
-  ///for protected routes
-  // useEffect(() => {
-  //   const fetchme = async () => {
-  //     const url = "https://sih-r2.onrender.com/me";
-  //     const token = localStorage.getItem("token");
-  //     console.log(token);
-  //     // Check if the token exists before making the request
-  //     if (token) {
-  //       try {
-  //         const response = await axios.get(url, {
-  //           headers: {
-  //             Authorization: `Bearer ${token}`,
-  //           },
-  //         });
-
-  //         console.log(response);
-  //         if (response.data) {
-  //           localStorage.setItem("email", response.data.email);
-  //           setEmail(response.data.email);
-  //           // console.log(email);
-  //           navigate("/landing");
-  //         }
-  //       } catch (error) {
-  //         console.error("Error fetching user data:", error);
-  //       }
-  //     }
-  //   };
-  //   fetchme();
-  // }, []);
-
   const loginHandler = () => {
     // setSales(true);
     navigate("/");
@@ -45,9 +15,6 @@ const SalesRepresentative = () => {
   const salesLoginHandler = () => {
     navigate("/login");
   };
-  //   const signupHandler = () => {
-  //     navigate("/signup");
-  //   };
 
   return (
     <>
@@ -144,24 +111,6 @@ const SalesRepresentative = () => {
               >
                 LOGIN as SALES
               </Button>
-
-              {/* <Button
-                variant="text"
-                onClick={signupHandler}
-                sx={{
-                  ":hover": {
-                    color: "white",
-                    backgroundColor: "#de6c0e",
-                  },
-                  display: "block",
-                  backgroundColor: "#de6c0e",
-                  color: "white",
-                  paddingX: "15px",
-                  fontSize: "1.1rem",
-                }}
-              >
-                SIGNUP
-              </Button> */}
             </Box>
           </Box>
         </Box>

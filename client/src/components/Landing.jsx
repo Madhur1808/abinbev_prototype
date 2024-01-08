@@ -42,7 +42,7 @@ const makePayment = async () => {
     );
 
     const response = await axios.post(
-      "http://localhost:4000/api/create-checkout-session",
+      "https://abinbev-prototype.onrender.com/api/create-checkout-session",
       {
         products,
       }

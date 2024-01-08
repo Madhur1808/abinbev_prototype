@@ -3,10 +3,13 @@ const jwt = require("jsonwebtoken");
 const fs = require("fs");
 const OpenAI = require("openai");
 const cors = require("cors");
+require("dotenv").config();
 
+const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
 //initialising express server
 const app = express();
 
+app.use(express.static("public"));
 app.use(cors());
 app.use(express.json());
 
@@ -46,10 +49,40 @@ const authenticateJwtuser = (req, res, next) => {
   }
 };
 
+//payments
+
+app.post("/api/create-checkout-session", async (req, res) => {
+  console.log("ffydtdfyfffff");
+  const { products } = req.body;
+  console.log(products);
+
+  const lineItems = products.map((product) => ({
+    price_data: {
+      currency: "inr",
+      product_data: {
+        name: product.name,
+      },
+      unit_amount: product.price * 100,
+    },
+    quantity: product.qnty,
+  }));
+
+  console.log(lineItems, "herelineitems");
+  const session = await stripe.checkout.sessions.create({
+    payment_method_types: ["card"],
+    line_items: lineItems,
+    mode: "payment",
+    success_url: "https://abinbev-prototype.vercel.app/sucess",
+    cancel_url: "https://abinbev-prototype.vercel.app/cancel",
+  });
+
+  res.send({ id: session.id });
+});
+
 // chatapp
 
 const openai = new OpenAI({
-  apiKey: "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",
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
 app.post("/openaichat", async (req, res) => {
@@ -104,79 +137,6 @@ app.post("/login", (req, res) => {
 app.get("/me", authenticateJwtuser, (req, res) => {
   console.log("thidvghbnjghjnmbkjhk1", req.user);
   res.json({ email: req.user.email });
-});
-
-app.post("/userdata", (req, res, next) => {
-  const info = req.body;
-  const user_email = info.email;
-
-  const userIndex = user_data.findIndex((user) => {
-    return user.email === user_email;
-  });
-  if (userIndex === -1) {
-    const newUser = {
-      email: user_email,
-      technical: info.technical,
-      cognitive: info.cognitive,
-      numerical: info.numerical,
-    };
-    user_data.push(newUser);
-    fs.writeFileSync("./files/data.json", JSON.stringify(user_data));
-    res.send("ok");
-  } else {
-    user_data[userIndex] = {
-      ...user_data[userIndex],
-
-      technical: info.technical,
-      cognitive: info.cognitive,
-      numerical: info.numerical,
-    };
-    fs.writeFileSync("./files/data.json", JSON.stringify(user_data));
-    res.send("ok");
-  }
-});
-
-app.post("/userdata2", (req, res, next) => {
-  const info = req.body;
-  const user_email = info.email;
-
-  const userIndex = user_data.findIndex((user) => {
-    return user.email === user_email;
-  });
-  let personalities = [
-    "ISTJ",
-    "INFJ",
-    "INTJ",
-    "ENFJ",
-    "ISTP",
-    "ESFJ",
-    "INFP",
-    "ESFP",
-    "ENFP",
-    "ESTP",
-    "ESTJ",
-    "ENTJ",
-    "INTP",
-    "ISFJ",
-    "ENTP",
-    "ISFP",
-  ];
-  let personalityNumber = Math.floor(Math.random() * 15);
-  let personality = personalities[personalityNumber];
-
-  if (userIndex === -1) {
-    const newUser = { email: user_email, personality: personality };
-    user_data.push(newUser);
-    fs.writeFileSync("./files/data.json", JSON.stringify(user_data));
-    res.send("ok");
-  } else {
-    user_data[userIndex] = {
-      ...user_data[userIndex],
-      personality: personality,
-    };
-    fs.writeFileSync("./files/data.json", JSON.stringify(user_data));
-    res.send("ok");
-  }
 });
 
 app.get("/dashboard", (req, res) => {

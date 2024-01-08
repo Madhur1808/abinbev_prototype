@@ -1,6 +1,7 @@
 import ResponsiveAppBar from "./NavBar";
 import { Footer } from "./Footer";
-import { React, useEffect, useState } from "react";
+import React from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import {
   Box,
@@ -35,7 +36,11 @@ const Dashboard = () => {
 
   // console.log(newObj);
 
-  const apti = ["Purchase1", "Purchase2", "Purchase3"];
+  const apti = [
+    { Purchase1: "2000" },
+    { Purchase2: "4000" },
+    { Purchase3: "6000" },
+  ];
 
   const rows = [
     createData("Email ID", emailId),
@@ -95,15 +100,19 @@ const Dashboard = () => {
           >
             <TableHead></TableHead>
             <TableBody>
-              {apti.map((index) => (
+              {apti.map((purchase, index) => (
                 <TableRow
                   key={index}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  <TableCell component="th" scope="row">
-                    {index}
-                  </TableCell>
-                  <TableCell align="right">-</TableCell>
+                  {Object.entries(purchase).map(([key, value]) => (
+                    <React.Fragment key={key}>
+                      <TableCell component="th" scope="row">
+                        {key}
+                      </TableCell>
+                      <TableCell align="right">{value}</TableCell>
+                    </React.Fragment>
+                  ))}
                 </TableRow>
               ))}
             </TableBody>

@@ -27,16 +27,12 @@ function Login() {
       else if (email.indexOf("@") == -1)
         alert("Please enter a valid email address");
       else {
-        const response = await axios.post(
-          "https://sih-r2.onrender.com/login",
-          null,
-          {
-            headers: {
-              email,
-              password,
-            },
-          }
-        );
+        const response = await axios.post("http://localhost:4000/login", null, {
+          headers: {
+            email,
+            password,
+          },
+        });
 
         console.log(response);
         alert(response.data.message);

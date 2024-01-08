@@ -17,7 +17,7 @@ import { Menu as MenuIcon } from "@mui/icons-material";
 
 import { useNavigate } from "react-router-dom";
 
-const pages = ["ChatUp", "Pay", "Dashboard"];
+const pages = ["ChatUp", "Dashboard"];
 
 function ResponsiveAppBar(props) {
   const navigate = useNavigate();

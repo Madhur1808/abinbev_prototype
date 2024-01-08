@@ -8,7 +8,7 @@ const ChatUp = () => {
   const [chat, setChat] = useState([]);
   const [aimessage, setaimessage] = useState("");
   const chatContainerRef = useRef(null);
-  // const { speak } = useSpeechSynthesis() ;
+  // const { speak } = useSpeechSynthesis();
 
   const username = localStorage.getItem("username");
   const setChatHandler = async () => {
